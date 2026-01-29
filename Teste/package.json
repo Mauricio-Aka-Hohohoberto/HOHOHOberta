@@ -1,0 +1,27 @@
+{
+  "name": "hohohoberta",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mauricio-Aka-Hohohoberto/HOHOHOberta.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Mauricio-Aka-Hohohoberto/HOHOHOberta/issues"
+  },
+  "homepage": "https://github.com/Mauricio-Aka-Hohohoberto/HOHOHOberta#readme",
+  "description": "",
+  "dependencies": {
+    "body-parser": "^2.2.2",
+    "cors": "^2.8.6",
+    "dotenv": "^17.2.3",
+    "express": "^5.2.1",
+    "mysql2": "^3.16.1"
+  }
+}
