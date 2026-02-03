@@ -5,6 +5,7 @@ const mysql = require('mysql2');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const dotenv = require('dotenv');
+const bcrypt = require('bcrypt');
 
 const app = express();
 app.use(bodyParser.json());
@@ -85,5 +86,74 @@ app.delete('/users/:id', (req, res) => {
 
 const port = 1997;
 
+app.post('/register', async (req, res) => {
+    const { nome, email, senha } = req.body;
+
+    if (!nome ||  !email || !senha) {
+        return res.status(400).send('Todos os campos são obrigatórios!');
+    }
+    try {
+        conn.query('SELECT * FROM users WHERE email = ?', [email], (error, results) => {
+            if (error) {
+                  res.status(500).send('Erro ao efetuar a busca!');
+                  return;
+            }
+            if (results.length > 0) {
+                res.status(409).send('Este e-mail já existe AAAAAAAAAAAAAAAA!');
+                return;
+            }
+        });
+    const senhahash = await bcrypt.hash(senha, 10);
+
+    conn.query('INSERT INTO users (nome, email, senha) VALUES (?, ?, ?)', [nome, email, senhahash], (error, results) => {
+        if (error) {
+            res.status(500).send('Error ao efetuar o registro!');
+            return;
+        }
+        res.status(201).json({mensagem: 'Cadastro realizado com sucesso', usuario: { id: results.insertId, nome: nome, email: email, senha: senhahash } });
+    });
+
+    } catch (error) {
+        console.error('Erro ao efetuar o cadastro!' + error.stack);
+        res.status(500).send('Erro ao efetuar o cadastro!');
+    }
+});
+app.post('/login', async (req, res) => {
+    const { email, senha} = req.body;
+
+    if (!email || !senha) {
+        res.status(400).send('TOdos os campos são obrigatórios!');
+        return;
+    }
+    try {
+        conn.query('ELECT* FROM users WHERE email = ?', [email], async (error, results) => {
+            if (error) {
+                res.status(500).send('Erro de login');
+                return;
+            }
+            if (results.length == 0) {
+                res.status(404).send('usuário não encontrado :( ... lágrimas, lágrimas.');
+                return;
+            }
+            if (results.length > 0) {
+                const user = results[0];
+
+                const rightsenha = await bcrypt.compare(senha, user.senha);
+
+                if (rightsenha) {
+                    res.status(200).send('login de usuário efetuado com sucesso!');
+                    return;
+                }
+                res.status(401).send('senha incorreta, tente novamente daqui à sete anos.');
+                return;
+            }
+        });
+    } catch (error) {
+        console.error('Erro ao efetuar o login', + error.stack);
+        res.status(500).send('Erro ao dar certo');
+    }
+});
+
+
 app.listen(port, () =>
-console.log(`Server rodando corretamente na porta https://localhost${port}`))
+console.log(`Server rodando corretamente na porta https://localhost${port}`));
