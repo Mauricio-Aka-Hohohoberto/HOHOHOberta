@@ -1,0 +1,49 @@
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./CSS/main.css">
+</head>
+<body>
+    <header id="inicio">
+    </header>
+    <main class="meio" style="background-image: url(./Fotos/undefined\ -\ Imgur.gif);">
+        <div id="login">
+            <h2 class="tituloL"">Login de Conta</h2>
+            <div class="masterL">
+                <input type="text" id="email" placeholder="Insira seu e-mail" class="inputL">
+                <input type="text" placeholder="Insira sua senha" class="inputR">
+                <button class="botaoL">Entrar na conta</button>
+                <p class="info">Não está cadastrado? Crie uma conta <span class="link">aqui.</span></p>
+            </div>
+        </div>
+    </main>
+    <footer id="fim">
+        <p class="letras">Feito por</p>
+        <p class="letras">Maurício Rosa de Moraes</p>
+    </footer>
+    <script>
+        async function login() {
+            const email = document.getElementById('email').value;
+            const senha = document.getElementById('senha').value;
+
+            if (!email || !sebga) {
+                alert('blablabla');
+                return;
+            }
+            const res = await fetch('http://localhost:3306/login', {
+                method: 'POST',
+                body: JSON.stringfy({ email, senha })
+            });
+            if (res.ok) {
+                alert('blablabla');
+                window.location.href ='homepage.html';
+            } else {
+                const msg = await res.text();
+                alert(msg);
+            }
+        }
+    </script>
+</body>
+</html>

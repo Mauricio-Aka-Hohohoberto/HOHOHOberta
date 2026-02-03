@@ -1,0 +1,125 @@
+.letras {
+    color: rgb(255, 255, 255);
+    text-shadow: 0px 0px 12px 1px;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.inputL {
+    height: 14%;
+    width: 67%;
+    border: 0px;
+    border-radius: 8px;
+    margin: 7% 0% 2.5% 0%;
+    background-color: rgb(221, 221, 221);
+    padding-left: 2%;
+}
+.inputL2 {
+    height: 14%;
+    width: 67%;
+    border: 0px;
+    border-radius: 8px;
+    margin: 2.5% 0% 2.5% 0%;
+    background-color: rgb(221, 221, 221);
+    padding-left: 2%;
+}
+.inputR {
+    height: 14%;
+    width: 67%;
+    border: 0px;
+    border-radius: 8px;
+    margin: 2.5% 0% 2.5% 0%;
+    background-color: rgb(221, 221, 221);
+    padding-left: 2%;
+    
+}
+.inputR2 {
+    height: 14%;
+    width: 67%;
+    border: 0px;
+    border-radius: 8px;
+    margin: 2.5% 0% 2.5% 0%;
+    background-color: rgb(221, 221, 221);
+    padding-left: 2%;
+    
+}
+.inputX {
+    height: 14%;
+    width: 67%;
+    border: 0px;
+    border-radius: 8px;
+    margin: 7.5% 0% 2.5% 0%;
+    background-color: rgb(221, 221, 221);
+    padding-left: 2%;
+    
+}
+.tituloL {
+    height: 25%;
+    width: 100%;
+    border-bottom: solid;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 8px 7px -8px;
+}
+.tituloX {
+    height: 25%;
+    width: 100%;
+    border-bottom: solid;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 57px;
+    box-shadow: 0 8px 7px -8px;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+}
+.botaoL {
+    height: 14%;
+    width: 67%;
+    border: 0px;
+    border-radius: 8px;
+    margin: 2.5% 0% 5% 0%;
+    background-color: rgb(243, 232, 216);
+    padding: 1%;
+    cursor: pointer;
+}
+.botaoL2 {
+    height: 16%;
+    width: 67%;
+    border: 0px;
+    border-radius: 8px;
+    margin: 2.5% 0% 5% 0%;
+    background-color: rgb(243, 232, 216);
+    padding: 1%;
+    cursor: pointer;
+}
+.b {
+    height: 30%;
+    width: 67%;
+    border: 0px;
+    border-radius: 8px;
+    margin: 2.5% 0% 5% 0%;
+    background-color: rgb(243, 232, 216);
+    padding: 1%;
+    cursor: pointer;
+}
+.botaoR {
+    height: 15%;
+    width: 67%;
+    border: 0px;
+    border-radius: 8px;
+    margin: 5% 0% 10% 0%;
+    background-color: rgb(243, 232, 216);
+    cursor: pointer;
+    font-size: 35px;
+    font-family:Arial, Helvetica, sans-serif;
+}
+.masterL {
+    height: 85%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#logo {
+    height: 50px;
+    width: 50px;
+}

@@ -1,0 +1,52 @@
+#inicio {
+    height: 78px;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    background-color: rgb(126, 76, 63);
+    border-bottom: solid 3px rgb(84, 100, 133);
+}
+.meio {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: wrap;
+}
+
+#fim {
+    height: 125px;
+    background-color: transparent;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    text-align: center;
+}
+#login {
+    background-color: rgb(255, 255, 255);
+    height: 390px;
+    width: 375px;
+    border-radius: 25px;
+    box-shadow: 0px 0px 13px 4px rgb(13, 13, 13);
+    display: flex;
+    flex-direction: column;
+}
+#cadastro {
+    background-color: rgb(255, 255, 255);
+    height: 405px;
+    width: 383px;
+    border-radius: 25px;
+    box-shadow: 0px 0px 13px 4px rgb(13, 13, 13);
+    display: flex;
+    flex-direction: column;
+}
+#homepage {
+    background-color: rgb(255, 255, 255);
+    height: 580px;
+    width: 675px;
+    border-radius: 40px;
+    box-shadow: 0px 0px 13px 4px rgb(13, 13, 13);
+    display: flex;
+    flex-direction: column;
+}
